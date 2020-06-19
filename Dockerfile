@@ -12,4 +12,6 @@ ADD . /app
 #(required) nginx port number
 EXPOSE 80
 
+ENTRYPOINT ["entrypoint.sh"]
+
 CMD ["rails", "server", "-b", "0.0.0.0"]
