@@ -9,5 +9,7 @@ ADD Gemfile.lock /app/Gemfile.lock
 RUN bundle install --without development test
 ADD . /app
 
+CMD ["rails", "server", "-p", "80"]
+
 #(required) nginx port number
-EXPOSE 80
+EXPOSE 80	EXPOSE 80 8080
