@@ -12,4 +12,4 @@ ADD . /app
 CMD ["rails", "server", "-p", "80"]
 
 #(required) nginx port number
-EXPOSE 80	EXPOSE 80 8080
+EXPOSE 80
