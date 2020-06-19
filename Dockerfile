@@ -10,6 +10,4 @@ RUN bundle install --without development test
 ADD . /app
 
 #(required) nginx port number
-EXPOSE 80 8080
-
-CMD ["rails", "server", "-p", "80"]
+EXPOSE 80
