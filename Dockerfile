@@ -1,15 +1,15 @@
-FROM ruby:2.3
+FROM seapy/rails-nginx-unicorn-pro:v1.1-ruby2.3.0-nginx1.8.1
+MAINTAINER seapy(iamseapy@gmail.com)
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        postgresql-client \
-    && rm -rf /var/lib/apt/lists/*
+# Add here your preinstall lib(e.g. imagemagick, mysql lib, pg lib, ssh config)
 
-WORKDIR /usr/src/app
-COPY Gemfile* ./
-RUN bundle install
-COPY . .
+#(required) Install Rails App
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
+RUN bundle install --without development test
+ADD . /app
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-p", "80"]
 
-EXPOSE 80 8080 3000 
+#(required) nginx port number
+EXPOSE 80
