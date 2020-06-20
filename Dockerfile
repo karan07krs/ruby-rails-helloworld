@@ -10,5 +10,5 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
-EXPOSE 80
-CMD ["rails", "server", "-p", "80"]
+#EXPOSE 80
+CMD ["rails", "server", "-p", "8080"]
