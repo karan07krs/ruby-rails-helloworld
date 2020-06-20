@@ -10,5 +10,5 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
-EXPOSE 80 3000
+EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
