@@ -11,4 +11,4 @@ RUN bundle install
 COPY . .
 
 EXPOSE 80
-CMD ["rails", "server"]
+CMD ["rails", "server", "-p", "80"]
